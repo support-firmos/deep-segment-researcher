@@ -38,7 +38,8 @@ export default function Home() {
         try {
           const errorData = await response.json();
           errorMessage = errorData.error || errorData.details || `Failed with status: ${response.status}`;
-        } catch (e) {
+        } catch (error) {
+          console.error('Error parsing SSE data:', error);
           // If we can't parse JSON, get text instead
           errorMessage = await response.text() || `Failed with status: ${response.status}`;
         }
