@@ -30,15 +30,13 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        // Check if response is JSON before trying to parse it
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.includes('application/json')) {
+        // Try to parse error as JSON, but fall back to status text if that fails
+        try {
           const errorData = await response.json();
           throw new Error(errorData.error || `Failed to generate research: ${response.status}`);
-        } else {
-          // Handle non-JSON error responses
-          const errorText = await response.text();
-          throw new Error(`Failed to generate research: ${response.status} - ${errorText || 'Unknown error'}`);
+        } catch (jsonError) {
+          // If JSON parsing fails, use the response status text
+          throw new Error(`Failed to generate research: ${response.status} ${response.statusText}`);
         }
       }
 
