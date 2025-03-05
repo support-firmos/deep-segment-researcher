@@ -25,7 +25,7 @@ For each segment, provide exactly 3 items per category. The questions after each
 
 Each insight should contain:
 - A clear headline that captures the core concept
-- A thorough explanation (3-4 sentences) that provides context
+- A thorough explanation (1 sentences) that provides context
 - Specific implications for CFO services
 - Where relevant, include examples or specific approaches
 
