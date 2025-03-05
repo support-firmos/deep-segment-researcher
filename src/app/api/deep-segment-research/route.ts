@@ -205,8 +205,8 @@ export async function POST(request: Request) {
                     // Send the content directly to the client
                     controller.enqueue(encoder.encode(content));
                   }
-                } catch (e) {
-                  console.error('Error parsing SSE data:', e);
+                } catch (error) {
+                  console.error('Error parsing SSE data:', error);
                 }
               }
             }
