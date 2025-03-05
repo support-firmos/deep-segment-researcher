@@ -25,9 +25,7 @@ For each segment, provide exactly 3 items per category. The questions after each
 
 Each insight should contain:
 - A clear headline that captures the core concept
-- A thorough explanation (1 sentences) that provides context
-- Specific implications for CFO services
-- Where relevant, include examples or specific approaches
+- One substantive, detailed sentence that provides comprehensive context and explains how CFO services address the specific point
 
 ### FEARS
 Consider: What keeps them up at night? What worst-case scenarios do they imagine? What job security threats do they perceive? What industry changes or trends do they fear? What concerns do they have about making wrong decisions?
@@ -60,102 +58,103 @@ Consider: What channels do they use most? How do they prefer to receive informat
   ⚠️ FEARS ⚠️
   
   🔴 [Fear 1 - Clear headline]
-  💡 [Detailed explanation of this fear (3-4 sentences) that provides context about why this matters to the segment, what triggers it, and its business impact. Include specific examples where possible and explain how a CFO service directly addresses this fear.]
+  💡 [One substantive sentence that fully explains this fear, its business impact, and how a CFO service directly addresses it, including specific examples where possible.]
   
   🔴 [Fear 2 - Clear headline]
-  💡 [Detailed explanation of this fear (3-4 sentences) that provides context about why this matters to the segment, what triggers it, and its business impact. Include specific examples where possible and explain how a CFO service directly addresses this fear.]
+  💡 [One substantive sentence that fully explains this fear, its business impact, and how a CFO service directly addresses it, including specific examples where possible.]
   
   🔴 [Fear 3 - Clear headline]
-  💡 [Detailed explanation of this fear (3-4 sentences) that provides context about why this matters to the segment, what triggers it, and its business impact. Include specific examples where possible and explain how a CFO service directly addresses this fear.]
+  💡 [One substantive sentence that fully explains this fear, its business impact, and how a CFO service directly addresses it, including specific examples where possible.]
   
   ⚙️ PAINS ⚙️
   
   🔴 [Pain 1 - Clear headline]
-  💡 [Detailed explanation of this pain point (3-4 sentences) that describes how it manifests in daily operations, its financial impact, and why traditional solutions fall short. Explain specifically how CFO services can alleviate this pain point with concrete examples.]
+  💡 [One substantive sentence that describes how this pain manifests in daily operations, its financial impact, and specifically how CFO services alleviate it with tangible benefits.]
   
   🔴 [Pain 2 - Clear headline]
-  💡 [Detailed explanation of this pain point (3-4 sentences) that describes how it manifests in daily operations, its financial impact, and why traditional solutions fall short. Explain specifically how CFO services can alleviate this pain point with concrete examples.]
+  💡 [One substantive sentence that describes how this pain manifests in daily operations, its financial impact, and specifically how CFO services alleviate it with tangible benefits.]
   
   🔴 [Pain 3 - Clear headline]
-  💡 [Detailed explanation of this pain point (3-4 sentences) that describes how it manifests in daily operations, its financial impact, and why traditional solutions fall short. Explain specifically how CFO services can alleviate this pain point with concrete examples.]
+  💡 [One substantive sentence that describes how this pain manifests in daily operations, its financial impact, and specifically how CFO services alleviate it with tangible benefits.]
   
   ⛔ OBJECTIONS ⛔
   
   🔴 [Objection 1 - Clear headline]
-  💡 [Detailed explanation of this objection (3-4 sentences) that outlines why clients raise this concern, what past experiences might contribute to it, and its underlying logic. Then provide specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
+  💡 [One substantive sentence that outlines why clients raise this concern and provides specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
   
   🔴 [Objection 2 - Clear headline]
-  💡 [Detailed explanation of this objection (3-4 sentences) that outlines why clients raise this concern, what past experiences might contribute to it, and its underlying logic. Then provide specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
+  💡 [One substantive sentence that outlines why clients raise this concern and provides specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
   
   🔴 [Objection 3 - Clear headline]
-  💡 [Detailed explanation of this objection (3-4 sentences) that outlines why clients raise this concern, what past experiences might contribute to it, and its underlying logic. Then provide specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
+  💡 [One substantive sentence that outlines why clients raise this concern and provides specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
   
   🎯 GOALS 🎯
   
   🔴 [Goal 1 - Clear headline]
-  💡 [Detailed explanation of this goal (3-4 sentences) that describes what success looks like, why it matters to the business, and current challenges in achieving it. Explain specifically how CFO services enable or accelerate achievement of this goal with tangible metrics or outcomes.]
+  💡 [One substantive sentence that describes what success looks like for this goal, why it matters to the business, and specifically how CFO services enable or accelerate its achievement with tangible metrics or outcomes.]
   
   🔴 [Goal 2 - Clear headline]
-  💡 [Detailed explanation of this goal (3-4 sentences) that describes what success looks like, why it matters to the business, and current challenges in achieving it. Explain specifically how CFO services enable or accelerate achievement of this goal with tangible metrics or outcomes.]
+  💡 [One substantive sentence that describes what success looks like for this goal, why it matters to the business, and specifically how CFO services enable or accelerate its achievement with tangible metrics or outcomes.]
   
   🔴 [Goal 3 - Clear headline]
-  💡 [Detailed explanation of this goal (3-4 sentences) that describes what success looks like, why it matters to the business, and current challenges in achieving it. Explain specifically how CFO services enable or accelerate achievement of this goal with tangible metrics or outcomes.]
+  💡 [One substantive sentence that describes what success looks like for this goal, why it matters to the business, and specifically how CFO services enable or accelerate its achievement with tangible metrics or outcomes.]
   
   💎 VALUES 💎
   
   🔴 [Value 1 - Clear headline]
-  💡 [Detailed explanation of this value (3-4 sentences) that explains why it's important to the segment, how it influences decisions, and what it means in practice. Describe how CFO services align with and reinforce this value through specific approaches or service elements.]
+  💡 [One substantive sentence that explains why this value is important to the segment, how it influences decisions, and how CFO services align with and reinforce this value through specific approaches.]
   
   🔴 [Value 2 - Clear headline]
-  💡 [Detailed explanation of this value (3-4 sentences) that explains why it's important to the segment, how it influences decisions, and what it means in practice. Describe how CFO services align with and reinforce this value through specific approaches or service elements.]
+  💡 [One substantive sentence that explains why this value is important to the segment, how it influences decisions, and how CFO services align with and reinforce this value through specific approaches.]
   
   🔴 [Value 3 - Clear headline]
-  💡 [Detailed explanation of this value (3-4 sentences) that explains why it's important to the segment, how it influences decisions, and what it means in practice. Describe how CFO services align with and reinforce this value through specific approaches or service elements.]
+  💡 [One substantive sentence that explains why this value is important to the segment, how it influences decisions, and how CFO services align with and reinforce this value through specific approaches.]
   
   🔄 DECISION-MAKING PROCESSES 🔄
   
   🔴 [Process 1 - Clear headline]
-  💡 [Detailed explanation of this process (3-4 sentences) that identifies key stakeholders involved, timing considerations, evaluation criteria, and common friction points. Explain how CFO services can enhance or streamline this process aspect and what approaches work best.]
+  💡 [One substantive sentence that identifies key stakeholders involved, evaluation criteria, common friction points, and how CFO services can enhance or streamline this process aspect.]
   
   🔴 [Process 2 - Clear headline]
-  💡 [Detailed explanation of this process (3-4 sentences) that identifies key stakeholders involved, timing considerations, evaluation criteria, and common friction points. Explain how CFO services can enhance or streamline this process aspect and what approaches work best.]
+  💡 [One substantive sentence that identifies key stakeholders involved, evaluation criteria, common friction points, and how CFO services can enhance or streamline this process aspect.]
   
   🔴 [Process 3 - Clear headline]
-  💡 [Detailed explanation of this process (3-4 sentences) that identifies key stakeholders involved, timing considerations, evaluation criteria, and common friction points. Explain how CFO services can enhance or streamline this process aspect and what approaches work best.]
+  💡 [One substantive sentence that identifies key stakeholders involved, evaluation criteria, common friction points, and how CFO services can enhance or streamline this process aspect.]
   
   🔊 INFLUENCES 🔊
   
   🔴 [Influence 1 - Clear headline]
-  💡 [Detailed explanation of this influence (3-4 sentences) that describes who or what shapes decisions, why this influence matters to the segment, and how they interact with this source. Explain specific ways to leverage this influence when marketing CFO services with tactical recommendations.]
+  💡 [One substantive sentence that describes who or what shapes decisions, why this influence matters to the segment, and specific ways to leverage this influence when marketing CFO services.]
   
   🔴 [Influence 2 - Clear headline]
-  💡 [Detailed explanation of this influence (3-4 sentences) that describes who or what shapes decisions, why this influence matters to the segment, and how they interact with this source. Explain specific ways to leverage this influence when marketing CFO services with tactical recommendations.]
+  💡 [One substantive sentence that describes who or what shapes decisions, why this influence matters to the segment, and specific ways to leverage this influence when marketing CFO services.]
   
   🔴 [Influence 3 - Clear headline]
-  💡 [Detailed explanation of this influence (3-4 sentences) that describes who or what shapes decisions, why this influence matters to the segment, and how they interact with this source. Explain specific ways to leverage this influence when marketing CFO services with tactical recommendations.]
+  💡 [One substantive sentence that describes who or what shapes decisions, why this influence matters to the segment, and specific ways to leverage this influence when marketing CFO services.]
   
   📱 COMMUNICATION PREFERENCES 📱
   
   🔴 [Preference 1 - Clear headline]
-  💡 [Detailed explanation of this preference (3-4 sentences) that outlines preferred channels, content formats, frequency, and messaging style. Provide specific recommendations for how to optimize communications for this preference when marketing CFO services.]
+  💡 [One substantive sentence that outlines preferred channels, content formats, messaging style, and specific recommendations for how to optimize communications for this preference when marketing CFO services.]
   
   🔴 [Preference 2 - Clear headline]
-  💡 [Detailed explanation of this preference (3-4 sentences) that outlines preferred channels, content formats, frequency, and messaging style. Provide specific recommendations for how to optimize communications for this preference when marketing CFO services.]
+  💡 [One substantive sentence that outlines preferred channels, content formats, messaging style, and specific recommendations for how to optimize communications for this preference when marketing CFO services.]
   
   🔴 [Preference 3 - Clear headline]
-  💡 [Detailed explanation of this preference (3-4 sentences) that outlines preferred channels, content formats, frequency, and messaging style. Provide specific recommendations for how to optimize communications for this preference when marketing CFO services.]
+  💡 [One substantive sentence that outlines preferred channels, content formats, messaging style, and specific recommendations for how to optimize communications for this preference when marketing CFO services.]
 "
 
 ## Segment Information:
 ${segmentInfo}
 
 Important notes:
-- Provide in-depth, substantive insights rather than surface-level observations
-- Each insight should include a clear headline plus detailed explanation (3-4 sentences)
+- Provide substantive insights with a clear headline plus ONE comprehensive sentence
+- Each sentence should pack multiple insights while remaining readable and coherent
 - Make all points specifically relevant to CFO services with actionable recommendations
 - Use the enhanced emoji format to clearly distinguish sections and make the content visually scannable
 - DO NOT include introductions, disclaimers, or conclusions
 `;
+
     
     // Create a new Response and StreamingTextResponse for proper streaming
     const encoder = new TextEncoder();
