@@ -192,21 +192,38 @@ export async function POST(request: Request) {
             const text = decoder.decode(value, { stream: true });
             const lines = text.split('\n');
             
+            // Buffer to handle incomplete JSON chunks
+            let buffer = '';
+            
             for (const line of lines) {
               if (line.startsWith('data: ')) {
                 const data = line.substring(6);
                 if (data === '[DONE]') continue;
                 
+                // Append to buffer and try parsing
+                buffer += data;
+                
                 try {
-                  const parsedData = JSON.parse(data);
+                  // Attempt to parse the buffer
+                  const parsedData = JSON.parse(buffer);
                   const content = parsedData.choices?.[0]?.delta?.content || '';
                   
                   if (content) {
                     // Send the content directly to the client
                     controller.enqueue(encoder.encode(content));
                   }
+                  
+                  // Clear buffer on successful parse
+                  buffer = '';
                 } catch (error) {
-                  console.error('Error parsing SSE data:', error);
+                  // If parsing fails, keep the buffer for next chunk
+                  if (error instanceof SyntaxError) {
+                    // Wait for next chunk to complete the JSON
+                    continue;
+                  } else {
+                    console.error('Error parsing SSE data:', error);
+                    buffer = ''; // Clear buffer on other errors
+                  }
                 }
               }
             }
