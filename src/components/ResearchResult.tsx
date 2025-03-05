@@ -36,7 +36,7 @@ export default function ResearchResult({
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-[#f7f8f8]">Targeting Strategy</h2>
+        <h2 className="text-xl font-bold text-[#f7f8f8]">Results</h2>
         <div className="flex space-x-2">
           <Button 
             variant="outline" 
@@ -60,7 +60,7 @@ export default function ResearchResult({
             onClick={onReset}
             className="bg-[#1A1A1A] text-[#f7f8f8] border border-[#8a8f98]/20 hover:bg-[#202020]"
           >
-            New Strategy
+            Reset
           </Button>
         </div>
       </div>
