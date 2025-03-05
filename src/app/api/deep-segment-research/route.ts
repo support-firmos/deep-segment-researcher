@@ -4,8 +4,8 @@ import { NextResponse } from 'next/server';
 // Set maximum duration to 60 seconds
 export const maxDuration = 60;
 
-// Use Edge runtime for better performance with long-running requests
-export const runtime = 'edge';
+// Use Node.js runtime to support longer execution times
+export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
   try {
@@ -164,7 +164,7 @@ export async function POST(request: Request) {
               model: 'google/gemini-2.0-flash-001',
               messages: [{ role: 'user', content: prompt }],
               stream: true,
-              max_tokens: 50000,
+              max_tokens: 15000,
               temperature: 1,
             }),
           });
