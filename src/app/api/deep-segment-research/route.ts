@@ -164,7 +164,7 @@ export async function POST(request: Request) {
               model: 'google/gemini-2.0-flash-001',
               messages: [{ role: 'user', content: prompt }],
               stream: true,
-              max_tokens: 50000,
+              max_tokens: 5000,
               temperature: 1,
             }),
           });
