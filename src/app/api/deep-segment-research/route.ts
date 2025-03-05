@@ -1,4 +1,4 @@
-// src/app/api/generate-segments/route.ts
+// src/app/api/deep-segment-research/route.ts
 import { NextResponse } from 'next/server';
 
 // Set maximum duration to 60 seconds
@@ -146,71 +146,84 @@ export async function POST(request: Request) {
     - For each segment, use the same emoji format and numbering style
     `;
     
-    // Make the API request with stream: true
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-        'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'https://deep-segment-researcher.vercel.app/',
-        'X-Title': 'Deep Segment Research',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-2.0-flash-001',
-        messages: [{ role: 'user', content: prompt }],
-        stream: true,
-        max_tokens: 50000,
-        temperature: 1,
-      }),
-    });
-    
-    if (!response.ok) {
-      return NextResponse.json({ 
-        error: `OpenRouter API error: ${response.status}`,
-      }, { status: 500 });
-    }
-    
-    // Transform the stream and forward it to the client
-    // Creating a transform stream that processes the OpenRouter SSE format
-    const transformStream = new TransformStream({
-      transform(chunk, controller) {
-        // Convert the chunk to text
-        const text = new TextDecoder().decode(chunk);
-        
-        // Process each line in the SSE chunk
-        const lines = text.split('\n');
-        
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            const data = line.substring(6);
+    // Create a new Response and StreamingTextResponse for proper streaming
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          // Make the API request
+          const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+              'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'https://deep-segment-researcher.vercel.app/',
+              'X-Title': 'Deep Segment Research',
+            },
+            body: JSON.stringify({
+              model: 'google/gemini-2.0-flash-001',
+              messages: [{ role: 'user', content: prompt }],
+              stream: true,
+              max_tokens: 50000,
+              temperature: 1,
+            }),
+          });
+          
+          if (!response.ok) {
+            const errorText = await response.text();
+            controller.error(`OpenRouter API error: ${response.status}, ${errorText}`);
+            return;
+          }
+          
+          // Process the stream
+          const reader = response.body?.getReader();
+          if (!reader) {
+            controller.error('Response body is not readable');
+            return;
+          }
+          
+          // Read and process the stream chunks
+          const decoder = new TextDecoder();
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
             
-            // Ignore the [DONE] message
-            if (data === '[DONE]') continue;
+            // Process each line in the SSE chunk
+            const text = decoder.decode(value, { stream: true });
+            const lines = text.split('\n');
             
-            try {
-              // Parse the JSON data
-              const parsedData = JSON.parse(data);
-              
-              // Extract the content from the choices delta
-              const content = parsedData.choices?.[0]?.delta?.content || '';
-              
-              if (content) {
-                // Send the content to the client
-                controller.enqueue(new TextEncoder().encode(content));
+            for (const line of lines) {
+              if (line.startsWith('data: ')) {
+                const data = line.substring(6);
+                if (data === '[DONE]') continue;
+                
+                try {
+                  const parsedData = JSON.parse(data);
+                  const content = parsedData.choices?.[0]?.delta?.content || '';
+                  
+                  if (content) {
+                    // Send the content directly to the client
+                    controller.enqueue(encoder.encode(content));
+                  }
+                } catch (e) {
+                  console.error('Error parsing SSE data:', e);
+                }
               }
-            } catch (e) {
-              console.error('Error parsing SSE data:', e);
             }
           }
+          
+          // Signal the end of the stream
+          controller.close();
+        } catch (error) {
+          controller.error(error);
         }
       }
     });
     
-    // Pipe the response to our transform stream
-    return new Response(response.body?.pipeThrough(transformStream), {
+    // Return the streaming response
+    return new Response(stream, {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
-        'Transfer-Encoding': 'chunked',
         'Cache-Control': 'no-cache',
       },
     });

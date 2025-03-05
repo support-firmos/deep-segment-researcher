@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -22,6 +21,9 @@ export default function Home() {
     setProgressStatus('Deep Segment Research on-going...');
 
     try {
+      // Enable debugging on Vercel to see what's happening
+      console.log('Starting API request to /api/deep-segment-research');
+      
       // Create the API request
       const response = await fetch('/api/deep-segment-research', {
         method: 'POST',
@@ -29,9 +31,18 @@ export default function Home() {
         body: JSON.stringify({ segmentInfo: formData.segmentInfo }),
       });
 
+      console.log('Received response:', response.status, response.ok);
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || `Failed to generate research: ${response.status}`);
+        let errorMessage;
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorData.details || `Failed with status: ${response.status}`;
+        } catch (e) {
+          // If we can't parse JSON, get text instead
+          errorMessage = await response.text() || `Failed with status: ${response.status}`;
+        }
+        throw new Error(errorMessage);
       }
 
       // Get the reader from the response body
@@ -40,6 +51,8 @@ export default function Home() {
         throw new Error('Response body is not readable');
       }
 
+      console.log('Starting to read stream');
+      
       // Set up the decoder for reading the stream
       const decoder = new TextDecoder();
       let accumulatedText = '';
@@ -49,11 +62,13 @@ export default function Home() {
         const { done, value } = await reader.read();
         
         if (done) {
+          console.log('Stream complete');
           break;
         }
         
         // Decode and append the new chunk
         const text = decoder.decode(value, { stream: true });
+        console.log('Received chunk of length:', text.length);
         accumulatedText += text;
         
         // Update the UI with the new text
@@ -66,6 +81,7 @@ export default function Home() {
     } catch (error) {
       console.error('Error generating research:', error);
       setError(`An error occurred: ${error instanceof Error ? error.message : String(error)}`);
+      setGeneratedResearch(null);
     } finally {
       setIsGenerating(false);
       setProgressStatus('');
@@ -105,7 +121,7 @@ export default function Home() {
           )}
         </div>
         
-        {isGenerating && generatedResearch === null && (
+        {isGenerating && (
           <div className="text-center mt-4">
             <p className="text-[#8a8f98]">
               {progressStatus || 'Performing Deep Segment Research...'}
