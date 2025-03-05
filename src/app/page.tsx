@@ -1,3 +1,4 @@
+// src/app/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -29,9 +30,16 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        // Handle error responses as text, not JSON
-        const errorText = await response.text();
-        throw new Error(errorText || `Failed to generate research: ${response.status}`);
+        // Check if response is JSON before trying to parse it
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || `Failed to generate research: ${response.status}`);
+        } else {
+          // Handle non-JSON error responses
+          const errorText = await response.text();
+          throw new Error(`Failed to generate research: ${response.status} - ${errorText || 'Unknown error'}`);
+        }
       }
 
       // Get the reader from the response body
