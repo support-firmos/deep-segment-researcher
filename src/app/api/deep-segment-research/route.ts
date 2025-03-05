@@ -160,7 +160,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         model: 'google/gemini-2.0-flash-001',
         messages: [{ role: 'user', content: prompt }],
-        stream: false,
+        stream: true,
         max_tokens: 50000,
         temperature: 1,
       }),
