@@ -23,21 +23,15 @@ export default function Home() {
 
     try {
       // Create the API request
-      const response = await fetch('/api/generate-segments', {
+      const response = await fetch('/api/deep-segment-research', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ segmentInfo: formData.segmentInfo }),
       });
 
       if (!response.ok) {
-        // Try to parse error as JSON, but fall back to status text if that fails
-        try {
-          const errorData = await response.json();
-          throw new Error(errorData.error || `Failed to generate research: ${response.status}`);
-        } catch (jsonError) {
-          // If JSON parsing fails, use the response status text
-          throw new Error(`Failed to generate research: ${response.status} ${response.statusText}`);
-        }
+        const errorData = await response.json();
+        throw new Error(errorData.error || `Failed to generate research: ${response.status}`);
       }
 
       // Get the reader from the response body
