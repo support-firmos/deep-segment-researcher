@@ -175,7 +175,7 @@ Important notes:
               model: 'google/gemini-2.0-flash-001',
               messages: [{ role: 'user', content: prompt }],
               stream: true,
-              max_tokens: 15000,
+              max_tokens: 25000,
               temperature: 1,
             }),
           });
