@@ -15,9 +15,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid segment information' }, { status: 400 });
     }
     
-    // Count number of segments (estimate) for the prompt
-    //const segmentCount = (segmentInfo.match(/\n\n/g) || []).length + 1;
-    
     const prompt = `You are an empathetic B2B Researcher capable of deeply understanding and embodying the Ideal Customer Profile (ICP) for CFO services.
 
     ## Your Task
@@ -149,6 +146,7 @@ export async function POST(request: Request) {
     - For each segment, use the same emoji format and numbering style
     `;
     
+    // Make the API request with stream: true
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -166,35 +164,57 @@ export async function POST(request: Request) {
       }),
     });
     
-    const responseText = await response.text();
-    
     if (!response.ok) {
-      console.error('OpenRouter error response:', responseText);
       return NextResponse.json({ 
         error: `OpenRouter API error: ${response.status}`,
-        details: responseText
       }, { status: 500 });
     }
     
-    try {
-      const data = JSON.parse(responseText);
-      if (!data.choices?.[0]?.message) {
-        return NextResponse.json({ 
-          error: 'Invalid response format from OpenRouter',
-          details: responseText 
-        }, { status: 500 });
-      }
+    // Transform the stream and forward it to the client
+    // Creating a transform stream that processes the OpenRouter SSE format
+    const transformStream = new TransformStream({
+      transform(chunk, controller) {
+        // Convert the chunk to text
+        const text = new TextDecoder().decode(chunk);
         
-      return NextResponse.json({ 
-        result: data.choices[0].message.content 
-      });
-    } catch (parseError) {
-      console.error('Error parsing JSON response:', parseError);
-      return NextResponse.json({ 
-        error: 'Failed to parse API response',
-        details: responseText 
-      }, { status: 500 });
-    }
+        // Process each line in the SSE chunk
+        const lines = text.split('\n');
+        
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.substring(6);
+            
+            // Ignore the [DONE] message
+            if (data === '[DONE]') continue;
+            
+            try {
+              // Parse the JSON data
+              const parsedData = JSON.parse(data);
+              
+              // Extract the content from the choices delta
+              const content = parsedData.choices?.[0]?.delta?.content || '';
+              
+              if (content) {
+                // Send the content to the client
+                controller.enqueue(new TextEncoder().encode(content));
+              }
+            } catch (e) {
+              console.error('Error parsing SSE data:', e);
+            }
+          }
+        }
+      }
+    });
+    
+    // Pipe the response to our transform stream
+    return new Response(response.body?.pipeThrough(transformStream), {
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Transfer-Encoding': 'chunked',
+        'Cache-Control': 'no-cache',
+      },
+    });
+    
   } catch (error) {
     console.error('Error generating segments:', error);
     return NextResponse.json({ 

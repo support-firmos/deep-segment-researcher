@@ -22,28 +22,50 @@ export default function Home() {
     setProgressStatus('Deep Segment Research on-going...');
 
     try {
-      const response = await fetch('/api/deep-segment-research', {
+      // Create the API request
+      const response = await fetch('/api/generate-segments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ segmentInfo: formData.segmentInfo }),
       });
 
       if (!response.ok) {
-        throw new Error(`Failed to generate Deep Segment Research: ${response.status}`);
+        const errorData = await response.json();
+        throw new Error(errorData.error || `Failed to generate research: ${response.status}`);
       }
 
-      const data = await response.json();
-      
-      if (!data.result) {
-        throw new Error('No result returned from Deep Segment Research');
+      // Get the reader from the response body
+      const reader = response.body?.getReader();
+      if (!reader) {
+        throw new Error('Response body is not readable');
+      }
+
+      // Set up the decoder for reading the stream
+      const decoder = new TextDecoder();
+      let accumulatedText = '';
+
+      // Read the stream chunk by chunk
+      while (true) {
+        const { done, value } = await reader.read();
+        
+        if (done) {
+          break;
+        }
+        
+        // Decode and append the new chunk
+        const text = decoder.decode(value, { stream: true });
+        accumulatedText += text;
+        
+        // Update the UI with the new text
+        setGeneratedResearch(accumulatedText);
       }
       
-      setGeneratedResearch(data.result);
+      // Make sure we set the final text when the stream is complete
+      setGeneratedResearch(accumulatedText);
       
     } catch (error) {
       console.error('Error generating research:', error);
-      setError('An error occurred while generating the Deep Segment Research. Please try again.');
-      setGeneratedResearch(null);
+      setError(`An error occurred: ${error instanceof Error ? error.message : String(error)}`);
     } finally {
       setIsGenerating(false);
       setProgressStatus('');
@@ -72,17 +94,18 @@ export default function Home() {
         )}
         
         <div className="card">
-          {generatedResearch ? (
+          {generatedResearch !== null ? (
             <ResearchResult 
               content={generatedResearch}
               onReset={resetGenerator}
+              isGenerating={isGenerating}
             />
           ) : (
             <ResearchForm onSubmit={generateResearch} />
           )}
         </div>
         
-        {isGenerating && (
+        {isGenerating && generatedResearch === null && (
           <div className="text-center mt-4">
             <p className="text-[#8a8f98]">
               {progressStatus || 'Performing Deep Segment Research...'}
