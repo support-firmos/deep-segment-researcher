@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -30,8 +29,9 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || `Failed to generate research: ${response.status}`);
+        // Handle error responses as text, not JSON
+        const errorText = await response.text();
+        throw new Error(errorText || `Failed to generate research: ${response.status}`);
       }
 
       // Get the reader from the response body

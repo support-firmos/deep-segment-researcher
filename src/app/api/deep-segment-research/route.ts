@@ -1,4 +1,3 @@
-// src/app/api/generate-segments/route.ts
 import { NextResponse } from 'next/server';
 
 // Set maximum duration to 60 seconds
@@ -9,10 +8,26 @@ export const runtime = 'edge';
 
 export async function POST(request: Request) {
   try {
-    const { segmentInfo } = await request.json();
+    // Try to parse the request body
+    let requestBody;
+    try {
+      requestBody = await request.json();
+    } catch (parseError) {
+      // If JSON parsing fails, return a text error response
+      return new Response('Invalid JSON in request body', { 
+        status: 400,
+        headers: { 'Content-Type': 'text/plain' }
+      });
+    }
+    
+    const { segmentInfo } = requestBody;
     
     if (!segmentInfo || typeof segmentInfo !== 'string') {
-      return NextResponse.json({ error: 'Invalid segment information' }, { status: 400 });
+      // Return a text error response for invalid segment info
+      return new Response('Invalid segment information', { 
+        status: 400,
+        headers: { 'Content-Type': 'text/plain' }
+      });
     }
     
     const prompt = `You are an empathetic B2B Researcher capable of deeply understanding and embodying the Ideal Customer Profile (ICP) for CFO services.
@@ -165,9 +180,12 @@ export async function POST(request: Request) {
     });
     
     if (!response.ok) {
-      return NextResponse.json({ 
-        error: `OpenRouter API error: ${response.status}`,
-      }, { status: 500 });
+      // Handle the error response from OpenRouter as text
+      const errorMessage = await response.text();
+      return new Response(
+        `OpenRouter API error: ${response.status} - ${errorMessage}`,
+        { status: 500, headers: { 'Content-Type': 'text/plain' } }
+      );
     }
     
     // Transform the stream and forward it to the client
@@ -200,6 +218,8 @@ export async function POST(request: Request) {
               }
             } catch (e) {
               console.error('Error parsing SSE data:', e);
+              // If we can't parse the SSE data, output an error message to the stream
+              controller.enqueue(new TextEncoder().encode(`Error parsing response: ${e.message}`));
             }
           }
         }
@@ -217,9 +237,10 @@ export async function POST(request: Request) {
     
   } catch (error) {
     console.error('Error generating segments:', error);
-    return NextResponse.json({ 
-      error: 'Failed to generate strategy',
-      details: error instanceof Error ? error.message : String(error)
-    }, { status: 500 });
+    // Return a text error response, not JSON
+    return new Response(
+      `Failed to generate strategy: ${error instanceof Error ? error.message : String(error)}`,
+      { status: 500, headers: { 'Content-Type': 'text/plain' } }
+    );
   }
 }
