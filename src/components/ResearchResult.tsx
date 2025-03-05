@@ -27,7 +27,7 @@ export default function ResearchResult({
     const element = document.createElement('a');
     const file = new Blob([content], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
-    element.download = 'LinkedIn_Targeting_Strategy.txt';
+    element.download = 'Deep_Segment_Research.txt';
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
