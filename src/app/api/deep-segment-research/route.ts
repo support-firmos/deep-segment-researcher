@@ -18,112 +18,143 @@ export async function POST(request: Request) {
     // Count number of segments (estimate) for the prompt
     //const segmentCount = (segmentInfo.match(/\n\n/g) || []).length + 1;
     
-    const prompt = `
-      You are an emphathetic B2B Researcher capable of deeply understanding and embodying the Ideal Customer Profile (ICP).
-      Your firt task is to analyze the segments provided below to perform research and generate ideas based on given ICP parameters.
-      Each segment contains the following: why this segment, justification for CFO services, market size, ease of outreach, sales navigation filters, and best intent data signals.
-      
+    const prompt = `You are an empathetic B2B Researcher capable of deeply understanding and embodying the Ideal Customer Profile (ICP).
+
+    ## Your Tasks
+    1. Analyze the segments provided below
+    2. For EACH SEGMENT, provide detailed insights in the specified categories
+    3. Format your response according to the template provided
     
-      After analyzing all the available segments given, your next task is that FOR EACH SEGMENT, please provide 5 fears, 5 pains, 5 objections, 5 goals, 5 values, 5 decision-making processes, 5 influences, and 5 communication preferences.
-      Here is a comprehensive and detailed guide for addressing the requirements:
-
-      -> Fears (the deep-seated fears that drive the decision-making process of the target audience)
-            Fear 1 - What keeps your ideal customer up at night regarding their business?
-            Fear 2 - What are the worst-case scenarios they imagine could happen to their company?
-            Fear 3 - How do they perceive potential threats to their job security or business stability?
-            Fear 4 - What industry changes or market trends do they fear the most?
-            Fear 5 - How do they feel about the possibility of making a wrong decision in their role?
-      -> Pains (Identify the specific problems and challenges the target audience faces regularly)
-            Pain 1 - What are the biggest daily frustrations your ideal customer experiences in their role?
-            Pain 2 - What tasks or processes do they find most time-consuming or inefficient?
-            Pain 3 - How do they describe their main challenges when talking to peers or colleagues?
-            Pain 4 - What negative experiences have they had with similar products or services in the past?
-            Pain 5 - How do their current problems affect their ability to achieve their business goals?
-      -> Objections (Recognize the reasons why the target audience might hesitate to buy or engage with your product or service)
-            Objection 1 - What are the primary reasons your ideal customer might be skeptical about your product or service?
-            Objection 2 - How do they evaluate the risks versus the benefits of adopting a new solution?
-            Objection 3 - What previous experiences with other providers might make them wary of trying your solution?
-            Objection 4 - What financial or budgetary concerns do they have regarding your offering?
-            Objection 5 - How do they perceive the difficulty of integrating your product or service into their existing workflows?
-      -> Goals (Determine the primary objectives and aspirations that drive the target audience's actions)
-            Goal 1 - What are the top three goals your ideal customer aims to achieve in the next year?
-            Goal 1 - How do they measure success in their role or business?
-            Goal 1 - What long-term visions or ambitions do they have for their company?
-            Goal 1 - What are the immediate milestones they are working towards?
-            Goal 1 - How do they prioritize their goals in the context of their daily responsibilities?
-      -> Values (Understand the core values that influence the target audience's decision-making process)
-            Value 1 - What ethical considerations are most important to your ideal customer when choosing a provider?
-            Value 2 - How do they define quality and value in a product or service?
-            Value 3 - What company culture aspects do they value in their own organization?
-            Value 4 - How do they prefer to build relationships with vendors and partners?
-            Value 5 - What do they value most in their business relationships (e.g., transparency, reliability, innovation)?
-      -> Decision-Making Processes (Gain insight into how the target audience makes purchasing decisions)
-            Decision-Making Process 1 - What steps do they typically follow when evaluating a new product or service?
-            Decision-Making Process 1 - Who else is involved in the decision-making process within their company?
-            Decision-Making Process 1 - What criteria are most important to them when selecting a solution?
-            Decision-Making Process 1 - How do they gather and assess information before making a decision?
-            Decision-Making Process 1 - What external resources (reviews, testimonials, case studies) do they rely on during the decision-making process?    
-      -> Influences (Identify the key factors and individuals that influence the target audience's choices)
-            Influence 1 - Who are the thought leaders or industry experts your ideal customer trusts the most?
-            Influence 2 - What publications, blogs, or websites do they frequently read for industry news and insights?
-            Influence 3 - How do they engage with their professional network to seek advice or recommendations?
-            Influence 4 - What role do customer reviews and testimonials play in their purchasing decisions?
-            Influence 5 - How do industry events, conferences, and webinars influence their perceptions and decisions?
-      -> Communication Preferences (Understand how the target audience prefers to receive and interact with marketing messages)
-            Communication Preference 1 - What communication channels do they use most frequently (email, social media, phone, etc.)?
-            Communication Preference 2 - How do they prefer to receive information about new products or services?
-            Communication Preference 3 - What type of content (articles, videos, infographics) do they find most engaging and useful?
-            Communication Preference 4 - How often do they like to be contacted by potential vendors?
-            Communication Preference 5 - What tone and style of communication do they respond to best (formal, casual, informative, etc.)?
-
-      Now that you have the guidelines, your next task is to format your final response by following this instruction below.
-      Everything inside [] contains special format requests/instructions. This is strictly how your response should go:
-        "
-          MARKET RESEARCH - [SEGMENT NAME 1]
-            [A sentence explaining the content below]
-
-            FEARS
-            1. [Fear 1] - [In a short paragraph, explain this fear with context and how a CFO can address this.]
-            [*Repeat the format above for the remaining 4 fears*]
-
-            PAINS
-            1. [Pain 1] - [In a short paragrpah, explain this pain with context and how a CFO can address this.]
-            [*Repeat the format above for the remaining 4 pains*]
-
-            OBJECTIONS
-            1. [Objection 1] - [In a short paragraph, explain why they are thinking of this objection and provide counter points by explaining how help from CFO's can be justified to address this.]
-            [*Repeat the format above for the remaining 4 objections*]
-
-            GOALS
-            1. [Goal 1] - [In a short paragraph, explain this goal and how CFO can assist in achieving this goal.]
-            [*Repeat the format above for the remaining 4 goals*]
-            
-            VALUES
-            1. [Value 1] - [In a short paragraph, explain this value and how CFO can assist in preserving this value.]
-            [*Repeat the format above for the remaining 4 values*]
-
-            DECISION-MAKING PROCESSES
-            1. [Decision-Making Process 1] - [In a short paragraph, explain this process and how CFO can assist in this process.]
-            [*Repeat the format above for the remaining 4 decision-making processes*]
-
-            INFLUENCES
-            1. [Influence 1] - [In a short paragraph, explain this influence and how CFO can leverage this.]
-            [*Repeat the format above for the remaining 4 influences*]
-
-            COMMUNICATION PREFERENCES
-            1. [Preference 1] - [In a short paragraph, explain this preference and how CRO can improve the purpose of this preference]
-            [*Repeat the format above for the remaining 4 preferences*]
-
-        MARKET RESEARCH - [SEGMENT NAME 2]
-        ....[same format from above]
-        "
-
-        Here is the ICP alongside the segments:
-        ${segmentInfo}
-
-        Final instructions:
-        - Do not include introductions, disclaimers, or conclusions. Your response must only consider the requested format above.
-        - Ensure an efficient and appealing formatting by using markdowns, proper bulleting and indentation, etc.
+    ## Segment Information
+    Each segment contains:
+    - Why this segment was chosen
+    - Justification for CFO services
+    - Market size
+    - Ease of outreach
+    - Sales navigation filters
+    - Best intent data signals
+    
+    ## Analysis Requirements
+    For each segment, provide 3 insights for each of the following categories. Use the questions below each category as a guide to inform your answers, but limit your output to only 3 key insights per category:
+    
+    ### FEARS (What keeps your ideal customer up at night?)
+    Consider these questions when developing your 3 fears:
+    - What keeps your ideal customer up at night regarding their business?
+    - What are the worst-case scenarios they imagine could happen to their company?
+    - How do they perceive potential threats to their job security or business stability?
+    - What industry changes or market trends do they fear the most?
+    - What are their concerns about making wrong decisions in their role?
+    
+    ### PAINS (What problems do they face regularly?)
+    Consider these questions when developing your 3 pains:
+    - What are the biggest daily frustrations your ideal customer experiences in their role?
+    - What tasks or processes do they find most time-consuming or inefficient?
+    - How do they describe their main challenges when talking to peers or colleagues?
+    - What negative experiences have they had with similar products or services in the past?
+    - How do their current problems affect their ability to achieve their business goals?
+    
+    ### OBJECTIONS (Why might they hesitate to engage?)
+    Consider these questions when developing your 3 objections:
+    - What are the primary reasons your ideal customer might be skeptical about your product or service?
+    - How do they evaluate the risks versus the benefits of adopting a new solution?
+    - What previous experiences with other providers might make them wary of trying your solution?
+    - What financial or budgetary concerns do they have regarding your offering?
+    - How do they perceive the difficulty of integrating your product or service into their existing workflows?
+    
+    ### GOALS (What are they trying to achieve?)
+    Consider these questions when developing your 3 goals:
+    - What are the top goals your ideal customer aims to achieve in the next year?
+    - How do they measure success in their role or business?
+    - What long-term visions or ambitions do they have for their company?
+    - What are the immediate milestones they are working towards?
+    - How do they prioritize their goals in the context of their daily responsibilities?
+    
+    ### VALUES (What principles guide their decisions?)
+    Consider these questions when developing your 3 values:
+    - What ethical considerations are most important to your ideal customer when choosing a provider?
+    - How do they define quality and value in a product or service?
+    - What company culture aspects do they value in their own organization?
+    - How do they prefer to build relationships with vendors and partners?
+    - What do they value most in their business relationships (e.g., transparency, reliability, innovation)?
+    
+    ### DECISION-MAKING PROCESSES (How do they make purchasing decisions?)
+    Consider these questions when developing your 3 decision-making processes:
+    - What steps do they typically follow when evaluating a new product or service?
+    - Who else is involved in the decision-making process within their company?
+    - What criteria are most important to them when selecting a solution?
+    - How do they gather and assess information before making a decision?
+    - What external resources (reviews, testimonials, case studies) do they rely on during the decision-making process?
+    
+    ### INFLUENCES (Who or what shapes their choices?)
+    Consider these questions when developing your 3 influences:
+    - Who are the thought leaders or industry experts your ideal customer trusts the most?
+    - What publications, blogs, or websites do they frequently read for industry news and insights?
+    - How do they engage with their professional network to seek advice or recommendations?
+    - What role do customer reviews and testimonials play in their purchasing decisions?
+    - How do industry events, conferences, and webinars influence their perceptions and decisions?
+    
+    ### COMMUNICATION PREFERENCES (How do they prefer to interact?)
+    Consider these questions when developing your 3 communication preferences:
+    - What communication channels do they use most frequently (email, social media, phone, etc.)?
+    - How do they prefer to receive information about new products or services?
+    - What type of content (articles, videos, infographics) do they find most engaging and useful?
+    - How often do they like to be contacted by potential vendors?
+    - What tone and style of communication do they respond to best (formal, casual, informative, etc.)?
+    
+    ## Response Format
+    
+    # MARKET RESEARCH - [SEGMENT NAME]
+    
+    ## FEARS
+    1. **[Fear 1]** - [Single concise point addressing this fear and how a CFO can help]
+    2. **[Fear 2]** - [Single concise point addressing this fear and how a CFO can help]
+    3. **[Fear 3]** - [Single concise point addressing this fear and how a CFO can help]
+    
+    ## PAINS
+    1. **[Pain 1]** - [Single concise point addressing this pain and how a CFO can help]
+    2. **[Pain 2]** - [Single concise point addressing this pain and how a CFO can help]
+    3. **[Pain 3]** - [Single concise point addressing this pain and how a CFO can help]
+    
+    ## OBJECTIONS
+    1. **[Objection 1]** - [Single concise point addressing this objection and how a CFO overcomes it]
+    2. **[Objection 2]** - [Single concise point addressing this objection and how a CFO overcomes it]
+    3. **[Objection 3]** - [Single concise point addressing this objection and how a CFO overcomes it]
+    
+    ## GOALS
+    1. **[Goal 1]** - [Single concise point explaining this goal and how a CFO helps achieve it]
+    2. **[Goal 2]** - [Single concise point explaining this goal and how a CFO helps achieve it]
+    3. **[Goal 3]** - [Single concise point explaining this goal and how a CFO helps achieve it]
+    
+    ## VALUES
+    1. **[Value 1]** - [Single concise point explaining this value and how a CFO aligns with it]
+    2. **[Value 2]** - [Single concise point explaining this value and how a CFO aligns with it]
+    3. **[Value 3]** - [Single concise point explaining this value and how a CFO aligns with it]
+    
+    ## DECISION-MAKING PROCESSES
+    1. **[Process 1]** - [Single concise point explaining this process and how a CFO enhances it]
+    2. **[Process 2]** - [Single concise point explaining this process and how a CFO enhances it]
+    3. **[Process 3]** - [Single concise point explaining this process and how a CFO enhances it]
+    
+    ## INFLUENCES
+    1. **[Influence 1]** - [Single concise point explaining this influence and how to leverage it]
+    2. **[Influence 2]** - [Single concise point explaining this influence and how to leverage it]
+    3. **[Influence 3]** - [Single concise point explaining this influence and how to leverage it]
+    
+    ## COMMUNICATION PREFERENCES
+    1. **[Preference 1]** - [Single concise point explaining this preference and how to optimize it]
+    2. **[Preference 2]** - [Single concise point explaining this preference and how to optimize it]
+    3. **[Preference 3]** - [Single concise point explaining this preference and how to optimize it]
+    
+    [Repeat the entire format above for each additional segment]
+    
+    ## ICP and Segment Information:
+    ${segmentInfo}
+    
+    Important notes:
+    - Do not include introductions, disclaimers, or conclusions
+    - Use proper Markdown formatting with headers, bullet points, and emphasis
+    - Keep each point concise and actionable
+    - Ensure all responses directly relate to CFO services
     `;
     
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
