@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     }
     
     // Count number of segments (estimate) for the prompt
-    const segmentCount = (segmentInfo.match(/\n\n/g) || []).length + 1;
+    //const segmentCount = (segmentInfo.match(/\n\n/g) || []).length + 1;
     
     const prompt = `
       You are an emphathetic B2B Researcher capable of deeply understanding and embodying the Ideal Customer Profile (ICP).
