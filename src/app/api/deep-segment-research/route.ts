@@ -85,56 +85,73 @@ Provide exactly 5 items per category. There is a guide below to help you write e
 
   ⚠️ FEARS ⚠️
 
-  🔴 [Fear 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the fear and how CFO services address it. Must include real-world business impact and solutions provided by CFO services.]
+  1️⃣ 1. [Fear 1 title]
+     [A comprehensive explanation of the fear. Must include real-world business impact. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss how CFO services address it. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 fears*]
 
   ⚙️ PAINS ⚙️
 
-  🔴 [Pain 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the pain point's financial impact and how CFO services solve it. Must include real-world negative consequences and the CFO solution.]
+  1️⃣ 1. [Pain 1 title]
+     [A comprehensive explanation of the pain. Must include real-world negative consequences or financial impact. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss how CFO services address it. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 pains*]
 
   ⛔ OBJECTIONS ⛔
 
-  🔴 [Objection 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the objection and how to counter it. Must address real-world concerns and provide specific counterpoints relevant to CFO services.]
+  1️⃣ 1. [Objection 1 title]
+     [A comprehensive explanation of the objection. Must include real-world client concerns. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss and counter by providing benefits of a CFO's services. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 objections*]
 
   🎯 GOALS 🎯
 
-  🔴 [Goal 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the goal's importance and how CFO services help achieve it. Must include both the desired outcome and the specific way CFO services contribute.]
+  1️⃣ 1. [Goal 1 title]
+     [A comprehensive explanation of the goal. Must include desired real-world outcomes. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss how CFO's services help attain the goal. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 goals]
 
   💎 VALUES 💎
 
-  🔴 [Value 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of why this value matters and how CFO services align with it. Must connect the value to real-world business decisions and show specific alignment.]
+  1️⃣ 1. [Value 1 title]
+     [A comprehensive explanation of the value. Must align the value to real-world business decisions. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss how CFO's services help preserve that value. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 values]
 
   🔄 DECISION-MAKING PROCESSES 🔄
-  🔴 [Process 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the decision-making process and how CFO services fit in. Must identify key stakeholders and show how CFO services can adapt.]
+
+  1️⃣ 1. [Process  1 title]
+     [A comprehensive explanation of the decision-making process. Must identify key stakeholders and actions. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss how CFO's services help fit in or improve that process. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 values]
 
   🔊 INFLUENCES 🔊
 
-  🔴 [Influence 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the influence and how to leverage it. Must identify who/what shapes decisions and provide a specific marketing approach.]
+  1️⃣ 1. [Influence 1 title]
+     [A comprehensive explanation of the influence. Must identify who/what shapes decisions and provide a specific marketing approach. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss how CFO's services help leverage this influence. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 influences]
 
   📱 COMMUNICATION PREFERENCES 📱
 
-  🔴 [Preference 1]
-  💡 [E[A comprehensive explanation (may include paragraphs and/or bullet points) of the communication preference and best practices. Must include channel preferences and specific content recommendations.]
+  1️⃣ 1. [Preference 1 title]
+     [A comprehensive explanation of the communication preference and best practices. Must include channel preferences and specific content recommendations. Use paragraph and/or bullet points.]
+  💡 How CFO's Can Help
+     [Comprehensively discuss how CFO's services help aid, improve or leverage this preference. Use paragraph and/or bullet points.]
 
   [*Repeat the format above for the remaining 4 preferences]
 "
