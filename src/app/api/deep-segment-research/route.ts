@@ -18,118 +18,137 @@ export async function POST(request: Request) {
     const prompt = `You are an empathetic B2B Researcher capable of deeply understanding and embodying the Ideal Customer Profile (ICP) for CFO services.
 
 ## Your Task
-Analyze each segment provided below and generate a comprehensive market research profile for EACH SEGMENT following the exact structure below. Use the segment information to identify the most relevant and impactful insights.
+Analyze the ICP below provided below and generate a comprehensive market research profile following the exact structure below. Use the information to identify the most relevant and impactful insights.
 
 ## Analysis Requirements
-For each segment, provide exactly 2 items per category. The questions after each category are guides to help you develop meaningful insights - you don't need to answer all questions, just use them to inform your 2 key points.
+Provide exactly 5 items per category. There is a guide below to help you write each item.
 
 Each insight should contain:
 - A clear headline that captures the core concept
 - One substantive, detailed sentence that provides comprehensive context and explains how CFO services address the specific point
 
-### FEARS
-Consider: What keeps them up at night? What worst-case scenarios do they imagine? What job security threats do they perceive? What industry changes or trends do they fear? What concerns do they have about making wrong decisions?
+### FEARS (the deep-seated fears that drive the decision-making process of the target audience)
+  Fear 1 - What keeps your ideal customer up at night regarding their business?
+  Fear 2 - What are the worst-case scenarios they imagine could happen to their company?
+  Fear 3 - How do they perceive potential threats to their job security or business stability?
+  Fear 4 - What industry changes or market trends do they fear the most?
+  Fear 5 - How do they feel about the possibility of making a wrong decision in their role?
 
-### PAINS
-Consider: What daily frustrations do they experience? What processes are inefficient? What challenges do they discuss with peers? What negative experiences have they had with similar services? How do current problems affect their goals?
+### PAINS (Identify the specific problems and challenges the target audience faces regularly)
+  Pain 1 - What are the biggest daily frustrations your ideal customer experiences in their role?
+   Pain 2 - What tasks or processes do they find most time-consuming or inefficient?
+   Pain 3 - How do they describe their main challenges when talking to peers or colleagues?
+   Pain 4 - What negative experiences have they had with similar products or services in the past?
+   Pain 5 - How do their current problems affect their ability to achieve their business goals?
 
-### OBJECTIONS
-Consider: Why might they be skeptical about CFO services? How do they evaluate risks vs benefits? What previous experiences make them wary? What financial concerns do they have? How do they perceive integration difficulty?
+### OBJECTIONS (Recognize the reasons why the target audience might hesitate to buy or engage with your product or service)
+    Objection 1 - What are the primary reasons your ideal customer might be skeptical about your product or service?
+    Objection 2 - How do they evaluate the risks versus the benefits of adopting a new solution?
+    Objection 3 - What previous experiences with other providers might make them wary of trying your solution?
+    Objection 4 - What financial or budgetary concerns do they have regarding your offering?
+    Objection 5 - How do they perceive the difficulty of integrating your product or service into their existing workflows?
 
-### GOALS
-Consider: What are their top goals for the next year? How do they measure success? What long-term visions do they have? What immediate milestones are they working toward? How do they prioritize goals?
+### GOALS (Determine the primary objectives and aspirations that drive the target audience's actions)
+    Goal 1 - What are the top three goals your ideal customer aims to achieve in the next year?
+    Goal 2 - How do they measure success in their role or business?
+    Goal 3 - What long-term visions or ambitions do they have for their company?
+    Goal 4 - What are the immediate milestones they are working towards?
+    Goal 5 - How do they prioritize their goals in the context of their daily responsibilities?
 
-### VALUES
-Consider: What ethical considerations matter when choosing providers? How do they define quality and value? What aspects of company culture do they prioritize? How do they prefer to build vendor relationships? What do they value most in business relationships?
+### VALUES (Understand the core values that influence the target audience's decision-making process)
+    Value 1 - What ethical considerations are most important to your ideal customer when choosing a provider?
+    Value 2 - How do they define quality and value in a product or service?
+    Value 3 - What company culture aspects do they value in their own organization?
+    Value 4 - How do they prefer to build relationships with vendors and partners?
+    Value 5 - What do they value most in their business relationships (e.g., transparency, reliability, innovation)?
 
-### DECISION-MAKING PROCESSES
-Consider: What steps do they follow when evaluating services? Who else is involved in decisions? What criteria matter most? How do they gather and assess information? What external resources do they rely on?
+### DECISION-MAKING PROCESSES (Gain insight into how the target audience makes purchasing decisions)
+    Decision-Making Process 1 - What steps do they typically follow when evaluating a new product or service?
+    Decision-Making Process 2 - Who else is involved in the decision-making process within their company?
+    Decision-Making Process 3 - What criteria are most important to them when selecting a solution?
+    Decision-Making Process 4- How do they gather and assess information before making a decision?
+    Decision-Making Process 5 - What external resources (reviews, testimonials, case studies) do they rely on during the decision-making process?  
 
-### INFLUENCES
-Consider: Which thought leaders do they trust? What publications do they read? How do they engage with professional networks? What role do reviews play? How do industry events influence their decisions?
+### INFLUENCES (Identify the key factors and individuals that influence the target audience's choices)
+    Influence 1 - Who are the thought leaders or industry experts your ideal customer trusts the most?
+    Influence 2 - What publications, blogs, or websites do they frequently read for industry news and insights?
+    Influence 3 - How do they engage with their professional network to seek advice or recommendations?
+    Influence 4 - What role do customer reviews and testimonials play in their purchasing decisions?
+    Influence 5 - How do industry events, conferences, and webinars influence their perceptions and decisions?
 
-### COMMUNICATION PREFERENCES
-Consider: What channels do they use most? How do they prefer to receive information? What content types do they find engaging? How often do they like vendor contact? What communication tone works best?
+### COMMUNICATION PREFERENCES (Understand how the target audience prefers to receive and interact with marketing messages)
+    Communication Preference 1 - What communication channels do they use most frequently (email, social media, phone, etc.)?
+    Communication Preference 2 - How do they prefer to receive information about new products or services?
+    Communication Preference 3 - What type of content (articles, videos, infographics) do they find most engaging and useful?
+    Communication Preference 4 - How often do they like to be contacted by potential vendors?
+    Communication Preference 5 - What tone and style of communication do they respond to best (formal, casual, informative, etc.)?
 
 ## Response Format
 "
-## Response Format
-"
-  🔎 🔎 🔎 MARKET RESEARCH - [SEGMENT NAME] 🔎 🔎 🔎
+  🔎 🔎 🔎 MARKET RESEARCH - [SEGMENT TITLE] 🔎 🔎 🔎
 
   ⚠️ FEARS ⚠️
 
-  🔴 [Fear 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the fear and how CFO services address it. Must include both the business impact and the solution provided by CFO services.]
+  🔴 [Fear 1]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the fear and how CFO services address it. Must include the business impact and the solution provided by CFO services.]
 
-  🔴 [Fear 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the fear and how CFO services address it. Must include both the business impact and the solution provided by CFO services.]
+  [*Repeat the format above for the remaining 4 fears*]
 
   ⚙️ PAINS ⚙️
 
-  🔴 [Pain 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that describes the pain point's financial impact and how CFO services solve it. Must include both the negative consequences and the specific solution.]
+  🔴 [Pain 1]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the pain point's financial impact and how CFO services solve it. Must include the negative consequences and the specific solution.]
 
-  🔴 [Pain 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that describes the pain point's financial impact and how CFO services solve it. Must include both the negative consequences and the specific solution.]
+  [*Repeat the format above for the remaining 4 pains*]
 
   ⛔ OBJECTIONS ⛔
 
-  🔴 [Objection 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the objection and how to counter it. Must address both the concern and provide a specific counterpoint relevant to CFO services.]
+  🔴 [Objection 1]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the objection and how to counter it. Must address both the concern and provide a specific counterpoint relevant to CFO services.]
 
-  🔴 [Objection 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the objection and how to counter it. Must address both the concern and provide a specific counterpoint relevant to CFO services.]
+  [*Repeat the format above for the remaining 4 objections*]
 
   🎯 GOALS 🎯
 
-  🔴 [Goal 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the goal's importance and how CFO services help achieve it. Must include both the desired outcome and the specific way CFO services contribute.]
+  🔴 [Goal 1]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the goal's importance and how CFO services help achieve it. Must include both the desired outcome and the specific way CFO services contribute.]
 
-  🔴 [Goal 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the goal's importance and how CFO services help achieve it. Must include both the desired outcome and the specific way CFO services contribute.]
+  [*Repeat the format above for the remaining 4 goals]
 
   💎 VALUES 💎
 
-  🔴 [Value 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains why this value matters and how CFO services align with it. Must connect the value to business decisions and show specific alignment.]
+  🔴 [Value 1]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of why this value matters and how CFO services align with it. Must connect the value to business decisions and show specific alignment.]
 
-  🔴 [Value 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains why this value matters and how CFO services align with it. Must connect the value to business decisions and show specific alignment.]
+  [*Repeat the format above for the remaining 4 values]
 
   🔄 DECISION-MAKING PROCESSES 🔄
+  🔴 [Process 1]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the decision-making process and how CFO services fit in. Must identify key stakeholders and show how CFO services can adapt.]
 
-  🔴 [Process 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the decision-making process and how CFO services fit in. Must identify key stakeholders and show how CFO services can adapt.]
-
-  🔴 [Process 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains the decision-making process and how CFO services fit in. Must identify key stakeholders and show how CFO services can adapt.]
+  [*Repeat the format above for the remaining 4 values]
 
   🔊 INFLUENCES 🔊
 
-  🔴 [Influence 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains this influence and how to leverage it. Must identify who/what shapes decisions and provide a specific marketing approach.]
+  🔴 [Influence 1]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the influence and how to leverage it. Must identify who/what shapes decisions and provide a specific marketing approach.]
 
-  🔴 [Influence 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains this influence and how to leverage it. Must identify who/what shapes decisions and provide a specific marketing approach.]
+  [*Repeat the format above for the remaining 4 influences]
 
   📱 COMMUNICATION PREFERENCES 📱
 
-  🔴 [Preference 1 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains this communication preference and best practices. Must include channel preferences and specific content recommendations.]
+  🔴 [Preference 1]
+  💡 [E[A comprehensive explanation (may include paragraphs and/or bullet points) of the communication preference and best practices. Must include channel preferences and specific content recommendations.]
 
-  🔴 [Preference 2 - Must be a clear, descriptive headline (4-6 words)]
-  💡 [Exactly one sentence of 30-40 words that explains this communication preference and best practices. Must include channel preferences and specific content recommendations.]
+  [*Repeat the format above for the remaining 4 preferences]
 "
 
-## Segment Information:
+## ICP:
 ${segmentInfo}
 
 Important notes:
 - Follow the exact structure shown in the template with precise emoji placement
-- Headlines must be 4-6 words that clearly capture the core concept
-- Each explanation must be exactly one sentence of 30-40 words
-- Every explanation must include both the issue/need AND how CFO services specifically address it
+- Explanations must include both the issue/need AND how CFO services specifically address it
 - Ensure consistent sentence structure and formatting across all sections
 - DO NOT include introductions, disclaimers, or conclusions
 - Maintain exact spacing shown in the template
