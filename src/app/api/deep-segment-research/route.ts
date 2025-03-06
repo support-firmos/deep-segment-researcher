@@ -23,10 +23,6 @@ Analyze the ICP below provided below and generate a comprehensive market researc
 ## Analysis Requirements
 Provide exactly 5 items per category. There is a guide below to help you write each item.
 
-Each insight should contain:
-- A clear headline that captures the core concept
-- One substantive, detailed sentence that provides comprehensive context and explains how CFO services address the specific point
-
 ### FEARS (the deep-seated fears that drive the decision-making process of the target audience)
   Fear 1 - What keeps your ideal customer up at night regarding their business?
   Fear 2 - What are the worst-case scenarios they imagine could happen to their company?
@@ -90,21 +86,21 @@ Each insight should contain:
   ⚠️ FEARS ⚠️
 
   🔴 [Fear 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the fear and how CFO services address it. Must include the business impact and the solution provided by CFO services.]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the fear and how CFO services address it. Must include real-world business impact and solutions provided by CFO services.]
 
   [*Repeat the format above for the remaining 4 fears*]
 
   ⚙️ PAINS ⚙️
 
   🔴 [Pain 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the pain point's financial impact and how CFO services solve it. Must include the negative consequences and the specific solution.]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the pain point's financial impact and how CFO services solve it. Must include real-world negative consequences and the CFO solution.]
 
   [*Repeat the format above for the remaining 4 pains*]
 
   ⛔ OBJECTIONS ⛔
 
   🔴 [Objection 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the objection and how to counter it. Must address both the concern and provide a specific counterpoint relevant to CFO services.]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of the objection and how to counter it. Must address real-world concerns and provide specific counterpoints relevant to CFO services.]
 
   [*Repeat the format above for the remaining 4 objections*]
 
@@ -118,7 +114,7 @@ Each insight should contain:
   💎 VALUES 💎
 
   🔴 [Value 1]
-  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of why this value matters and how CFO services align with it. Must connect the value to business decisions and show specific alignment.]
+  💡 [A comprehensive explanation (may include paragraphs and/or bullet points) of why this value matters and how CFO services align with it. Must connect the value to real-world business decisions and show specific alignment.]
 
   [*Repeat the format above for the remaining 4 values]
 
