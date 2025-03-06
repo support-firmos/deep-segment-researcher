@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Market Segment Research Generator',
-  description: 'Create comprehensive market segment research for any industry in seconds',
+  title: 'Deep Segment Researcher',
+  description: 'Perform research and generate ideas based on Ideal Customer Profile (ICP).',
 };
 
 export default function RootLayout({

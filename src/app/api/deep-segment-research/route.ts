@@ -21,13 +21,11 @@ export async function POST(request: Request) {
 Analyze each segment provided below and generate a comprehensive market research profile for EACH SEGMENT following the exact structure below. Use the segment information to identify the most relevant and impactful insights.
 
 ## Analysis Requirements
-For each segment, provide exactly 3 items per category. The questions after each category are guides to help you develop meaningful insights - you don't need to answer all questions, just use them to inform your 3 key points.
+For each segment, provide exactly 2 items per category. The questions after each category are guides to help you develop meaningful insights - you don't need to answer all questions, just use them to inform your 2 key points.
 
 Each insight should contain:
 - A clear headline that captures the core concept
-- A thorough explanation (1 sentences) that provides context
-- Specific implications for CFO services
-- Where relevant, include examples or specific approaches
+- One substantive, detailed sentence that provides comprehensive context and explains how CFO services address the specific point
 
 ### FEARS
 Consider: What keeps them up at night? What worst-case scenarios do they imagine? What job security threats do they perceive? What industry changes or trends do they fear? What concerns do they have about making wrong decisions?
@@ -55,107 +53,88 @@ Consider: What channels do they use most? How do they prefer to receive informat
 
 ## Response Format
 "
+## Response Format
+"
   🔎 🔎 🔎 MARKET RESEARCH - [SEGMENT NAME] 🔎 🔎 🔎
-  
+
   ⚠️ FEARS ⚠️
-  
-  🔴 [Fear 1 - Clear headline]
-  💡 [Detailed explanation of this fear (3-4 sentences) that provides context about why this matters to the segment, what triggers it, and its business impact. Include specific examples where possible and explain how a CFO service directly addresses this fear.]
-  
-  🔴 [Fear 2 - Clear headline]
-  💡 [Detailed explanation of this fear (3-4 sentences) that provides context about why this matters to the segment, what triggers it, and its business impact. Include specific examples where possible and explain how a CFO service directly addresses this fear.]
-  
-  🔴 [Fear 3 - Clear headline]
-  💡 [Detailed explanation of this fear (3-4 sentences) that provides context about why this matters to the segment, what triggers it, and its business impact. Include specific examples where possible and explain how a CFO service directly addresses this fear.]
-  
+
+  🔴 [Fear 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the fear and how CFO services address it. Must include both the business impact and the solution provided by CFO services.]
+
+  🔴 [Fear 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the fear and how CFO services address it. Must include both the business impact and the solution provided by CFO services.]
+
   ⚙️ PAINS ⚙️
-  
-  🔴 [Pain 1 - Clear headline]
-  💡 [Detailed explanation of this pain point (3-4 sentences) that describes how it manifests in daily operations, its financial impact, and why traditional solutions fall short. Explain specifically how CFO services can alleviate this pain point with concrete examples.]
-  
-  🔴 [Pain 2 - Clear headline]
-  💡 [Detailed explanation of this pain point (3-4 sentences) that describes how it manifests in daily operations, its financial impact, and why traditional solutions fall short. Explain specifically how CFO services can alleviate this pain point with concrete examples.]
-  
-  🔴 [Pain 3 - Clear headline]
-  💡 [Detailed explanation of this pain point (3-4 sentences) that describes how it manifests in daily operations, its financial impact, and why traditional solutions fall short. Explain specifically how CFO services can alleviate this pain point with concrete examples.]
-  
+
+  🔴 [Pain 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that describes the pain point's financial impact and how CFO services solve it. Must include both the negative consequences and the specific solution.]
+
+  🔴 [Pain 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that describes the pain point's financial impact and how CFO services solve it. Must include both the negative consequences and the specific solution.]
+
   ⛔ OBJECTIONS ⛔
-  
-  🔴 [Objection 1 - Clear headline]
-  💡 [Detailed explanation of this objection (3-4 sentences) that outlines why clients raise this concern, what past experiences might contribute to it, and its underlying logic. Then provide specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
-  
-  🔴 [Objection 2 - Clear headline]
-  💡 [Detailed explanation of this objection (3-4 sentences) that outlines why clients raise this concern, what past experiences might contribute to it, and its underlying logic. Then provide specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
-  
-  🔴 [Objection 3 - Clear headline]
-  💡 [Detailed explanation of this objection (3-4 sentences) that outlines why clients raise this concern, what past experiences might contribute to it, and its underlying logic. Then provide specific counterpoints explaining how CFO services overcome this objection with evidence or reasoning.]
-  
+
+  🔴 [Objection 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the objection and how to counter it. Must address both the concern and provide a specific counterpoint relevant to CFO services.]
+
+  🔴 [Objection 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the objection and how to counter it. Must address both the concern and provide a specific counterpoint relevant to CFO services.]
+
   🎯 GOALS 🎯
-  
-  🔴 [Goal 1 - Clear headline]
-  💡 [Detailed explanation of this goal (3-4 sentences) that describes what success looks like, why it matters to the business, and current challenges in achieving it. Explain specifically how CFO services enable or accelerate achievement of this goal with tangible metrics or outcomes.]
-  
-  🔴 [Goal 2 - Clear headline]
-  💡 [Detailed explanation of this goal (3-4 sentences) that describes what success looks like, why it matters to the business, and current challenges in achieving it. Explain specifically how CFO services enable or accelerate achievement of this goal with tangible metrics or outcomes.]
-  
-  🔴 [Goal 3 - Clear headline]
-  💡 [Detailed explanation of this goal (3-4 sentences) that describes what success looks like, why it matters to the business, and current challenges in achieving it. Explain specifically how CFO services enable or accelerate achievement of this goal with tangible metrics or outcomes.]
-  
+
+  🔴 [Goal 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the goal's importance and how CFO services help achieve it. Must include both the desired outcome and the specific way CFO services contribute.]
+
+  🔴 [Goal 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the goal's importance and how CFO services help achieve it. Must include both the desired outcome and the specific way CFO services contribute.]
+
   💎 VALUES 💎
-  
-  🔴 [Value 1 - Clear headline]
-  💡 [Detailed explanation of this value (3-4 sentences) that explains why it's important to the segment, how it influences decisions, and what it means in practice. Describe how CFO services align with and reinforce this value through specific approaches or service elements.]
-  
-  🔴 [Value 2 - Clear headline]
-  💡 [Detailed explanation of this value (3-4 sentences) that explains why it's important to the segment, how it influences decisions, and what it means in practice. Describe how CFO services align with and reinforce this value through specific approaches or service elements.]
-  
-  🔴 [Value 3 - Clear headline]
-  💡 [Detailed explanation of this value (3-4 sentences) that explains why it's important to the segment, how it influences decisions, and what it means in practice. Describe how CFO services align with and reinforce this value through specific approaches or service elements.]
-  
+
+  🔴 [Value 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains why this value matters and how CFO services align with it. Must connect the value to business decisions and show specific alignment.]
+
+  🔴 [Value 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains why this value matters and how CFO services align with it. Must connect the value to business decisions and show specific alignment.]
+
   🔄 DECISION-MAKING PROCESSES 🔄
-  
-  🔴 [Process 1 - Clear headline]
-  💡 [Detailed explanation of this process (3-4 sentences) that identifies key stakeholders involved, timing considerations, evaluation criteria, and common friction points. Explain how CFO services can enhance or streamline this process aspect and what approaches work best.]
-  
-  🔴 [Process 2 - Clear headline]
-  💡 [Detailed explanation of this process (3-4 sentences) that identifies key stakeholders involved, timing considerations, evaluation criteria, and common friction points. Explain how CFO services can enhance or streamline this process aspect and what approaches work best.]
-  
-  🔴 [Process 3 - Clear headline]
-  💡 [Detailed explanation of this process (3-4 sentences) that identifies key stakeholders involved, timing considerations, evaluation criteria, and common friction points. Explain how CFO services can enhance or streamline this process aspect and what approaches work best.]
-  
+
+  🔴 [Process 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the decision-making process and how CFO services fit in. Must identify key stakeholders and show how CFO services can adapt.]
+
+  🔴 [Process 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains the decision-making process and how CFO services fit in. Must identify key stakeholders and show how CFO services can adapt.]
+
   🔊 INFLUENCES 🔊
-  
-  🔴 [Influence 1 - Clear headline]
-  💡 [Detailed explanation of this influence (3-4 sentences) that describes who or what shapes decisions, why this influence matters to the segment, and how they interact with this source. Explain specific ways to leverage this influence when marketing CFO services with tactical recommendations.]
-  
-  🔴 [Influence 2 - Clear headline]
-  💡 [Detailed explanation of this influence (3-4 sentences) that describes who or what shapes decisions, why this influence matters to the segment, and how they interact with this source. Explain specific ways to leverage this influence when marketing CFO services with tactical recommendations.]
-  
-  🔴 [Influence 3 - Clear headline]
-  💡 [Detailed explanation of this influence (3-4 sentences) that describes who or what shapes decisions, why this influence matters to the segment, and how they interact with this source. Explain specific ways to leverage this influence when marketing CFO services with tactical recommendations.]
-  
+
+  🔴 [Influence 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains this influence and how to leverage it. Must identify who/what shapes decisions and provide a specific marketing approach.]
+
+  🔴 [Influence 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains this influence and how to leverage it. Must identify who/what shapes decisions and provide a specific marketing approach.]
+
   📱 COMMUNICATION PREFERENCES 📱
-  
-  🔴 [Preference 1 - Clear headline]
-  💡 [Detailed explanation of this preference (3-4 sentences) that outlines preferred channels, content formats, frequency, and messaging style. Provide specific recommendations for how to optimize communications for this preference when marketing CFO services.]
-  
-  🔴 [Preference 2 - Clear headline]
-  💡 [Detailed explanation of this preference (3-4 sentences) that outlines preferred channels, content formats, frequency, and messaging style. Provide specific recommendations for how to optimize communications for this preference when marketing CFO services.]
-  
-  🔴 [Preference 3 - Clear headline]
-  💡 [Detailed explanation of this preference (3-4 sentences) that outlines preferred channels, content formats, frequency, and messaging style. Provide specific recommendations for how to optimize communications for this preference when marketing CFO services.]
+
+  🔴 [Preference 1 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains this communication preference and best practices. Must include channel preferences and specific content recommendations.]
+
+  🔴 [Preference 2 - Must be a clear, descriptive headline (4-6 words)]
+  💡 [Exactly one sentence of 30-40 words that explains this communication preference and best practices. Must include channel preferences and specific content recommendations.]
 "
 
 ## Segment Information:
 ${segmentInfo}
 
 Important notes:
-- Provide in-depth, substantive insights rather than surface-level observations
-- Each insight should include a clear headline plus detailed explanation (3-4 sentences)
-- Make all points specifically relevant to CFO services with actionable recommendations
-- Use the enhanced emoji format to clearly distinguish sections and make the content visually scannable
+- Follow the exact structure shown in the template with precise emoji placement
+- Headlines must be 4-6 words that clearly capture the core concept
+- Each explanation must be exactly one sentence of 30-40 words
+- Every explanation must include both the issue/need AND how CFO services specifically address it
+- Ensure consistent sentence structure and formatting across all sections
 - DO NOT include introductions, disclaimers, or conclusions
+- Maintain exact spacing shown in the template
 `;
+
     
     // Create a new Response and StreamingTextResponse for proper streaming
     const encoder = new TextEncoder();
